@@ -1,0 +1,32 @@
+<template>
+    <lightning-card
+        title="Salesforce components"
+        class="slds-m-horizontal_medium"
+    >
+        <p class="slds-p-horizontal_small">
+            <lightning-button label="New" slot="actions"></lightning-button>
+            <lightning-button
+                variant="brand"
+                label="Base"
+                title="Looks like a link"
+                class="slds-m-left_x-small"
+                onclick={handleClick}
+            ></lightning-button>
+            <lightning-icon
+                class="slds-m-left_x-small"
+                icon-name="action:approval"
+                alternative-text="Approved"
+                title="Approved"
+            ></lightning-icon>
+        </p>
+    </lightning-card>
+
+    <lightning-card title="Test components" class="slds-m-horizontal_medium">
+        <p class="slds-p-horizontal_small">
+            <lightning-icon
+                icon-name="utility:data_cloud"
+                alternative-text="data"
+            ></lightning-icon>
+        </p>
+    </lightning-card>
+</template>

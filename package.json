@@ -1,0 +1,51 @@
+{
+    "name": "storybook-lwc",
+    "version": "1.0.0",
+    "description": "A Storybook setup for Lightning Web Components (LWC) with Webpack integration.",
+    "main": "index.js",
+    "keywords": [
+        "storybook",
+        "lwc",
+        "webpack",
+        "lightning-web-components"
+    ],
+    "author": "Eric-2369",
+    "license": "GPL-3.0-or-later",
+    "private": false,
+    "type": "module",
+    "engines": {
+        "node": ">=22.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "dependencies": {
+        "storybook": "8.3.6",
+        "@storybook/addon-a11y": "8.3.6",
+        "@storybook/addon-actions": "8.3.6",
+        "@storybook/addon-essentials": "8.3.6",
+        "@storybook/addon-links": "8.3.6",
+        "@storybook/blocks": "8.3.6",
+        "@storybook/manager-api": "8.3.6",
+        "@storybook/test": "8.3.6",
+        "@storybook/theming": "8.3.6",
+        "@storybook/web-components": "8.3.6",
+        "@storybook/web-components-webpack5": "8.3.6",
+        "@storybook/addon-webpack5-compiler-swc": "1.0.5",
+        "css-loader": "7.1.2",
+        "style-loader": "4.0.0",
+        "remark-gfm": "4.0.0",
+        "babel-loader": "9.2.1",
+        "babel-plugin-transform-css-import-to-string": "0.0.2",
+        "lwc": "8.4.0",
+        "lwc-webpack-plugin": "3.1.0",
+        "lit": "3.2.1",
+        "lightning-base-components": "1.22.2-alpha",
+        "@salesforce-ux/design-system": "2.25.3"
+    },
+    "devDependencies": {
+        "prettier": "3.3.3"
+    }
+}

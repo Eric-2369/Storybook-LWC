@@ -1,0 +1,91 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as DateRangeStories from './dateRange.stories';
+
+<Meta title="LWC Components/DateRange" of={DateRangeStories} />
+
+# DateRange
+
+`DateRange` is a component for selecting a date range.
+
+## Usage
+
+```html
+<c-date-range
+    required="{false}"
+    disabled="{false}"
+    start-date-label-name="Start Date"
+    end-date-label-name="End Date"
+    start-date-help-text="Select the start date"
+    end-date-help-text="Select the end date"
+    min="2023-01-01"
+    max="2023-12-31"
+    start-date-value=""
+    end-date-value=""
+></c-date-range>
+```
+
+## API
+
+### Required Attributes
+
+| Property      | Type   | Default | Example      | Description            |
+|---------------|--------|---------|--------------|------------------------|
+| startDateValue | string | ""      | "2024-10-20" | Start date field value |
+| endDateValue   | string | ""      | "2024-10-25" | End date field value   |
+
+### Optional Attributes
+
+| Property            | Type    | Default     | Example                       | Description                        |
+|---------------------|---------|-------------|-------------------------------|------------------------------------|
+| required            | boolean | false       | true                          | Is required                        |
+| disabled            | boolean | false       | true                          | Is disabled                        |
+| startDateLabelName  | string  | "Start Date" | "Project Start Date"          | Start date field label name        |
+| endDateLabelName    | string  | "End Date"   | "Project End Date"            | End date field label name          |
+| startDateHelpText   | string  | ""          | "Contract duration start date or contract effective date." | Start date field help text |
+| endDateHelpText     | string  | ""          | "Contract duration end date or contract expiration date." | End date field help text |
+| min                 | string  | ""          | "2024-01-01"                  | Min value of start date & end date |
+| max                 | string  | ""          | "2024-12-31"                  | Max value of start date & end date |
+
+### Events
+
+| Event Name | Description               | Parameters |
+|------------|---------------------------|------------|
+| change     | Action when change dates  | --         |
+
+## Examples
+
+### Common Example
+
+**Attention to styling: use `class="slds-gutters_xx-small"` to help style the gap between inputs inside `DateRange` or `class="slds-grow"`.**
+
+```html
+<c-date-range
+    class="slds-gutters_xx-small"
+    required
+    start-date-help-text="Contract duration start date or contract effective date."
+    end-date-help-text="Contract duration end date or contract expiration date."
+    start-date-value={_contract.startDate}
+    end-date-value={_contract.endDate}
+    onchange={handleDateFieldsChange}
+></c-date-range>
+```
+
+### Full Width Example
+
+```html
+<section lwc:if={isShowStartAndEndDate} class="slds-grid slds-gutters_medium slds-m-top_medium">
+    <c-date-range
+        class="slds-grow"
+        required
+        start-date-help-text="Contract duration start date or contract effective date."
+        end-date-help-text="Contract duration end date or contract expiration date."
+        start-date-value={_contract.startDate}
+        end-date-value={_contract.endDate}
+        onchange={handleDateFieldsChange}
+    ></c-date-range>
+</section>
+```
+
+<Canvas>
+    <Story of={DateRangeStories.Default} />
+</Canvas>

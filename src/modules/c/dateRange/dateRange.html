@@ -1,0 +1,37 @@
+<template>
+    <section class="slds-grid slds-grow">
+        <lightning-input
+            class="slds-col start-date slds-m-right_x-small"
+            min={min}
+            max={max}
+            type="date"
+            disabled={disabled}
+            required={required}
+            label={startDateLabelName}
+            data-type="startDate"
+            value={startDateValue}
+            field-level-help={startDateHelpText}
+            onblur={handleDateChange}
+            onchange={handleDateChange}
+        ></lightning-input>
+        <lightning-input
+            class="slds-col end-date"
+            min={min}
+            max={max}
+            type="date"
+            data-type="endDate"
+            required={required}
+            disabled={disabled}
+            label={endDateLabelName}
+            field-level-help={endDateHelpText}
+            value={endDateValue}
+            onblur={handleDateChange}
+            onchange={handleDateChange}
+        ></lightning-input>
+    </section>
+    <template lwc:if={isShowCustomError}>
+        <section class="slds-has-error slds-grid slds-grow">
+            <span class="slds-form-element__help slds-col">{customErrorMessage}</span>
+        </section>
+    </template>
+</template>
