@@ -1,4 +1,4 @@
-FROM node:20.18.0-bookworm-slim AS builder
+FROM node:22.13.1-bookworm-slim AS builder
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ COPY webpack.config.js ./
 
 RUN npm run build-storybook
 
-FROM nginx:1.27.2-bookworm
+FROM nginx:1.26.2-bookworm
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
